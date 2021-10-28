@@ -1,6 +1,6 @@
 //用户请求模块
 import request from '@/Utils/request.js'
-
+import store from '@/store/index.js'
 export const login=data=>{
     return request ({
         method: "POST",
@@ -12,7 +12,7 @@ export const login=data=>{
 export const sendSms=mobile=>{
     return request ({
         method: "GET",
-        url:`v1_0/sms/codes/${mobile}`,
+        url:`/v1_0/sms/codes/${mobile}`,
 
     })
 }
@@ -20,19 +20,12 @@ export const sendSms=mobile=>{
 export const getuserinfo=()=>{
     return request ({
         method: "GET",
-        url:"v1_0/user",
+        url:"/v1_0/user",
         //发送请求头数据
-        // headers:{
-        //     //该接口需要提供授权
-        //     Authorization: `Bearer ${store.state.user.token}`
-        // }
+        headers:{
+            //该接口需要提供授权
+            Authorization: `Bearer ${store.state.user.token}`
+        }
 
-    })
-}
-//获取用户频道列表
-export const getuserchannels=()=>{
-    return request ({
-        method: "GET",
-        url:"v1_0/user/channels",
     })
 }

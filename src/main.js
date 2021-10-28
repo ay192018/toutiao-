@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Vant from 'vant'
-
+import './Utils/dayjs.js'
 //加载vant组件库
 import 'vant/lib/index.css'
 //注册组件库

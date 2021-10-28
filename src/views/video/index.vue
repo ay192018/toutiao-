@@ -1,3 +1,4 @@
+
 <template>
   <div class="video-container">视频模块</div>
 </template>
@@ -9,4 +10,4 @@ export default {
 </script>
 
 <style lang="less" scoped>
-</style>
+

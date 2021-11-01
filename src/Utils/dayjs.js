@@ -9,5 +9,8 @@ dayjs.locale('zh-hk')
 //获取当前最新时间
 // console.log(dayjs().format('YYYY-MM-DD'));
 Vue.filter('relativeTime',value=>{
-return dayjs().to(dayjs(value))
+return dayjs(value).to(dayjs())
+})
+Vue.filter('datetime',(value,format='YYYY-MM-DD-HH:mm:ss')=>{
+return dayjs(value).format(format)
 })

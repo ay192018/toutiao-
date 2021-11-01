@@ -37,18 +37,19 @@ export default {
   methods: {
     async onLoad() {
       //请求获取数据
-      //将数据放到数据列表中
-      //关闭本次的loading
+
       const { data } = await getsearchresult({
         page: this.page,
         per_page: this.perpage,
         q: this.searchText,
       });
-      
+
       const { results } = data.data;
 
       this.list.push(...results);
+      //将数据放到数据列表中
       this.loading = false;
+      //关闭本次的loading
       if (results.length) {
         this.page++;
       } else {

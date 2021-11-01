@@ -8,7 +8,7 @@ const request= axios.create({
       try {
         return JSONbig.parse(data)
       } catch (err) {
-        console.log('转换失败',err);
+        // console.log('转换失败',err);
         return data 
       }
     }]

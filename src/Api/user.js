@@ -30,9 +30,57 @@ export const getuserinfo=()=>{
     })
 }
 //获取用户频道列表
-export const getuserchannels=()=>{
+export const getuserchannels=(userId)=>{
     return request ({
         method: "GET",
         url:"v1_0/user/channels",
+        data:{
+            target:userId
+        }
+    })
+}
+//关注用户
+export const addFollow=(userId)=>{
+    return request ({
+        method: "DELETE",
+        url:`/v1_0/user/followings/${userId}`,
+    })
+}
+//取消关注
+export const deleteFollow=()=>{
+    return request ({
+        method: "GET",
+        url:"v1_0/user/channels",
+    })
+}
+//用户资料
+export const getuserprofiles=()=>{
+    return request ({
+        method: "GET",
+        url:"/v1_0/user/profile",
+    })
+}
+//编辑用户个人资料
+export const changeusername=(name)=>{
+    return request ({
+        method: "PATCH",
+        url:"/v1_0/user/profile",
+        name
+    })
+}
+//用户生日修改
+export const changeuserbirthday=(name)=>{
+    return request ({
+        method: "PATCH",
+        url:"/v1_0/user/profile",
+        name
+    })
+}
+//修改用户资料
+export const changeuserphoto=(data)=>{
+    return request ({
+        method: "PATCH",
+        url:"/v1_0/user/photo",
+        data
     })
 }

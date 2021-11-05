@@ -54,7 +54,9 @@
     <!-- 消息通知 ，小爱同学 -->
     <van-cell-group>
       <van-cell title="消息通知" is-link />
-      <van-cell title="小爱同学" is-link />
+    <van-cell title="小爱同学" is-link  to="/user/ai">
+      
+    </van-cell>
       <van-cell
         title="退出登录"
         class="lgout-cell"
@@ -66,7 +68,9 @@
   </div>
 </template>
 
+
 <script>
+
 import { mapState } from "vuex";
 import { getuserinfo } from "@/Api/user.js";
 export default {

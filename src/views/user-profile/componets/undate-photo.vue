@@ -27,7 +27,7 @@ export default {
     }
 },
     methods:{
-       async onConfirm(){
+       async onConfirm(){//确认要做的事
         //    console.log(this.image);
            this.$toast.loading({
                message:'保存中',
